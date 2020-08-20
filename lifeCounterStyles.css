@@ -1,0 +1,263 @@
+
+/* Colors:
+
+Warm White: #FFEBD6;
+Cool White: #ede7e3;
+Blue: #22577A;
+Black: #281528
+Red: #861D16;
+Green: #285336;
+
+
+
+/*.background {
+  background-image: url(../Images/Zendikar-Resurgent.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+} */
+
+
+body {
+  font-size: 1em;
+  font-family: "Noto Sans TC", sans-serif;
+  text-align: center;
+  background: linear-gradient(rgba(237, 231, 227, 0.8), rgba(237, 231, 227, 0.5)),
+              url(Images/Zendikar-Resurgent.jpg) no-repeat;
+  background-size: cover;
+}
+
+header {
+  font-weight: 500;
+  /* padding: 1px;
+*/
+}
+
+
+
+.player {
+  background: #285336;
+  color: #ede7e3;
+  font-size: 3em;
+  padding: 30px;
+  font-weight: 600;
+  border-radius: 12px;
+}
+
+.player:hover, .playerSelected {
+  background: #ede7e3;
+  color: #285336;
+}
+
+.lifeTotal {
+  background: #22577A;
+  color: #ede7e3;
+  font-size: 3em;
+  padding: 30px;
+  font-weight: 600;
+  border-radius: 12px;
+}
+
+.lifeTotal:hover, .lifeTotalSelected {
+  background: #ede7e3;
+  color: #22577A;
+}
+
+#startGame, #reset {
+
+  background: #861D16;
+  color: #ede7e3;
+  padding: 15px;
+  margin: 20px;
+  font-size: 1em;
+  font-weight: 600;
+  border-radius: 12px;
+
+}
+
+#startGame:hover, #reset:hover {
+  background: #ede7e3;
+  color: #861D16;
+}
+
+/* Specify which div by Id */
+#player1Counter, #player2Counter,
+ #player3Counter,#player4Counter,#player5Counter,
+ #player6Counter {
+  display: inline-block;
+  padding: 10px;
+  background-color: #22577A;
+  border-style: solid;
+  border-color: black;
+  border-radius: 16px;
+  margin: 10px;
+  width: 400px;
+  height: 240px;
+}
+@media (max-width: 1024px) {
+  #player1Counter, #player2Counter,
+   #player3Counter,#player4Counter,#player5Counter,
+   #player6Counter {
+     width: 50%;
+   }
+}
+
+@media (max-width: 768px) {
+  #player1Counter, #player2Counter,
+   #player3Counter,#player4Counter,#player5Counter,
+   #player6Counter {
+    display: inline-block;
+    padding: 10px;
+    background-color: #22577A;
+    border-style: solid;
+    border-color: black;
+    border-radius: 16px;
+    margin: 20px;
+
+  }
+}
+
+/* Color togglers */
+
+.white, .blue, .black, .red, .green {
+  border-radius: 50%;
+  border-width: thin;
+  border-color: white;
+  height: 30px;
+  width: 30px;
+}
+
+/* CSS for Life counter ver. dos */
+
+ #counters1Thru2, #counters3Thru4, #counters5Thru6, #bottomButtons {
+  display: flex;
+  justify-content: center;
+
+
+}
+
+.lifeCounter {
+
+}
+
+ #lifeP1, #lifeP2, #lifeP3, #lifeP4, #lifeP5, #lifeP6 {
+
+  color: #FFEBD6;
+  display: inline-block;
+  width: 50%;
+  height: 250px;
+  padding: 10px;
+  font-size: 7em;
+  margin:20px;
+}
+
+@media (max-width: 768px) {
+  #lifeP1, #lifeP2, #lifeP3, #lifeP4, #lifeP5, #lifeP6 {
+   display: inline-block;
+   width: 50%;
+   height: 100px;
+   padding: 10px;
+   font-size: 4em;
+   margin:10px;
+ }
+}
+
+.minus {
+  background: none;
+  color:  #FFEBD6;
+  font-size: 2em;
+  font-weight: 400;
+  border: none;
+}
+
+.plus {
+  background: none;
+  color:  #FFEBD6;
+  font-size: 2em;
+
+  font-weight: 400;
+  border: none;
+}
+
+.infectCounter{
+  display: flex;
+  position: relative;
+  left: 40px;
+  border-style: solid;
+  border-color: lightSkyBlue;
+}
+
+.commanderDamage {
+  display: flex;
+  position: relative;
+  left: 100px;
+  border-style: solid;
+  border-color: lightCoral;
+}
+
+.infectCommander {
+  display: none;
+
+
+}
+
+.plusInfect, .minusInfect, .plusCommander, .minusCommander {
+  border-radius: 50%;
+  height: 30px;
+  position: relative;
+  top: 60px;
+
+}
+
+.plusInfect, .plusCommander {
+  position: relative;
+  left: 5px;
+}
+
+/* .minusInfect, .minusCommander {
+  position: relative;
+  right: 5px;
+} */
+
+#infectP1 {
+  background: #432534;
+  color: #ede7e3;
+  border-color: #ede7e3;
+  border-width: thick;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+}
+
+#commanderP1 {
+  background: #0F4C57;
+  color: #ede7e3;
+  border-color: #ede7e3;
+  border-width: thick;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+}
+
+.toggle {
+
+}
+
+.colorToggle {
+
+}
+
+.settings {
+  background: none;
+  font-size: 1.5em;
+  border: none;
+  color: #ede7e3;
+  opacity: 0.3;
+}
+
+#version {
+  position: absolute;
+  right: 5px;
+  bottom: 0px;
+}

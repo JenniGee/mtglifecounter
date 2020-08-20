@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html lang="eng-US">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name= "viewport" content= "width=device-width, initial-scale=1.0">
+  <title>MTG Life Counter</title>
+  <script src="https://kit.fontawesome.com/e804d740ee.js" crossorigin="anonymous"></script>
+  <script src="lifeCounterScript.js" async></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="lifeCounterStyles.css">
+  </head>
+
+
+
+ <body>
+
+   <header id="header">
+      <h1>A Magic the Gathering Life Counter Tool</h1>
+      <p>Infect and Commander damage counters coming soon.</p>
+     </header>
+
+     <main>
+       <section id= "startingScreen">
+          <h2>Number of Players</h2>
+        <div id="numberOfPlayers">
+       <input type="button" class="player" value="2" onclick="numberOfPlayers(2)"/>
+       <input type="button" class="player" value="3" onclick="numberOfPlayers(3)"/>
+       <input type="button" class="player" value="4" onclick="numberOfPlayers(4)"/>
+       <input type="button" class="player" value="5" onclick="numberOfPlayers(5)"/>
+       <input type="button" class="player" value="6" onclick="numberOfPlayers(6)"/>
+         </div>
+
+
+
+    <div id="selectLifeTotal">
+       <h2>Life Total</h2>
+        <input type="button" class="lifeTotal" value="20" onclick="totalLife(20)"/>
+        <input type="button" class="lifeTotal" value="30" onclick="totalLife(30)"/>
+        <input type="button" class="lifeTotal" value="40" onclick="totalLife(40)"/>
+
+      </div>
+        </section>
+
+       <div id="bottomButtons">
+
+         <button id="startGame"> start </button>
+         <button id="reset"> reset </button>
+         </div>
+
+
+
+<section id="playerCounters">
+<div id="counters1Thru2">
+
+ <!-- Player 1's Life Counter  -->
+    <div id="player1Counter" >
+       <!-- Buttons to toggle background color  -->
+      <div class="toggle">
+      <button type="button" class="settings" onclick= "displaySettings(0)"><i class="fas fa-cog" ></i> </button>
+      <div class="colorToggle">
+      <input type="button" style= "background: #FFEBD6;" class="white" value="&nbsp;" onclick = "playerColor(1, plains)" />
+      <input type="button" style="background: #22577A;" class="blue" value="&nbsp;" onclick = "playerColor(1, island)" />
+      <input type="button" style="background: #281528;" class="black" value="&nbsp;" onclick = "playerColor(1, swamp)" />
+      <input type="button" style="background: #861D16;" class="red" value="&nbsp;" onclick = "playerColor(1, mountain)" />
+      <input type="button" style="background: #285336;" class="green" value="&nbsp;" onclick = "playerColor(1, forest)" />
+    </div>
+    <!--  <input type="button" value="infect" onclick=""/>
+      <input type="button" value="commander" onclick=""/> -->
+    </div>
+ <!--- Life Counter -->
+      <div class="lifeCounter">
+      <input type="button" class="minus" value=" - " onclick = "loseLife(1)" />
+
+        <p id="lifeP1">&nbsp;P1 &nbsp;</p>
+
+        <input type="button" class="plus" value=" + " onclick = "gainLife(1)" />
+      </div>
+    <!-- Infect Counter -->
+    <div class="infectCommander">
+      <div class="infectCounter">
+        <input type="button" class="minusInfect" value=" - " onclick = "" />
+          <p id="infectP1">&nbsp;P1 Infect &nbsp;</p>
+          <input type="button" class="plusInfect" value=" + " onclick = "" />
+      </div>
+
+      <div class="commanderDamage">
+        <input type="button" class="minusCommander" value=" - " onclick = "" />
+          <p id="commanderP1">&nbsp;P1 CD &nbsp;</p>
+          <input type="button" class="plusCommander" value=" + " onclick = "" />
+      </div>
+    </div>
+  </div>
+
+    <!-- Player 2's Life Counter  -->
+
+    <div id="player2Counter">
+
+      <div class="toggle">
+      <button type="button" class="settings" onclick= "displaySettings(1)"><i class="fas fa-cog" ></i> </button>
+      <div class="colorToggle">
+        <input type="button" style= "background: #FFEBD6;" class="white" value="&nbsp;" onclick = "playerColor(2, plains)" />
+        <input type="button" style="background: #22577A;" class="blue" value="&nbsp;" onclick = "playerColor(2, island)" />
+        <input type="button" style="background: #281528;" class="black" value="&nbsp;" onclick = "playerColor(2, swamp)" />
+        <input type="button" style="background: #861D16;" class="red" value="&nbsp;" onclick = "playerColor(2, mountain)" />
+        <input type="button" style="background: #285336;" class="green" value="&nbsp;" onclick = "playerColor(2, forest)" />
+    </div>
+      <!--  <input type="button" value="infect" onclick=""/>
+      <input type="button" value="commander" onclick=""/> -->
+      </div>
+      <div class="lifeCounter">
+         <input type="button" class="minus" value=" - " onclick = "loseLife(2)" />
+
+           <p id="lifeP2">&nbsp;P2 &nbsp;</p>
+
+           <input type="button" class="plus" value=" + " onclick = "gainLife(2)" />
+         </div>
+
+           <div class="infectCommander">
+             <div class="infectCounter">
+               <input type="button" class="minusInfect" value=" - " onclick = "" />
+                 <p id="infectP2">&nbsp;P2 Infect &nbsp;</p>
+                 <input type="button" class="plusInfect" value=" + " onclick = "" />
+             </div>
+
+             <div class="commanderDamage">
+               <input type="button" class="minusCommander" value=" - " onclick = "" />
+                 <p id="commanderP2">&nbsp;P2 CD &nbsp;</p>
+                 <input type="button" class="plusCommander" value=" + " onclick = "" />
+             </div>
+           </div>
+     </div>
+   </div>
+
+
+<div id="counters3Thru4">
+       <!-- Player 3's Life Counter  -->
+          <div id="player3Counter">
+            <div class="toggle">
+            <button type="button" class="settings" onclick= "displaySettings(2)"><i class="fas fa-cog" ></i> </button>
+            <div class="colorToggle">
+              <input type="button" style= "background: #FFEBD6;" class="white" value="&nbsp;" onclick = "playerColor(3, plains)" />
+              <input type="button" style="background: #22577A;" class="blue" value="&nbsp;" onclick = "playerColor(3, island)" />
+              <input type="button" style="background: #281528;" class="black" value="&nbsp;" onclick = "playerColor(3, swamp)" />
+              <input type="button" style="background: #861D16;" class="red" value="&nbsp;" onclick = "playerColor(3, mountain)" />
+              <input type="button" style="background: #285336;" class="green" value="&nbsp;" onclick = "playerColor(3, forest)" />
+          </div>
+            <!--  <input type="button" value="infect" onclick=""/>
+            <input type="button" value="commander" onclick=""/> -->
+            </div>
+           <div id=lifeCounter>
+            <input type="button" class="minus" value=" - " onclick = "loseLife(3)" />
+
+              <p id="lifeP3">&nbsp;P3 &nbsp;</p>
+
+              <input type="button" class="plus" value=" + " onclick = "gainLife(3)" />
+            </div>
+          </div>
+
+
+          <!-- Player 4's Life Counter  -->
+        <div id="player4Counter">
+          <div class="toggle">
+          <button type="button" class="settings" onclick= "displaySettings(3)"><i class="fas fa-cog" ></i> </button>
+          <div class="colorToggle">
+            <input type="button" style= "background: #FFEBD6;" class="white" value="&nbsp;" onclick = "playerColor(4, plains)" />
+            <input type="button" style="background: #22577A;" class="blue" value="&nbsp;" onclick = "playerColor(4, island)" />
+            <input type="button" style="background: #281528;" class="black" value="&nbsp;" onclick = "playerColor(4, swamp)" />
+            <input type="button" style="background: #861D16;" class="red" value="&nbsp;" onclick = "playerColor(4, mountain)" />
+            <input type="button" style="background: #285336;" class="green" value="&nbsp;" onclick = "playerColor(4, forest)" />
+        </div>
+          <!--  <input type="button" value="infect" onclick=""/>
+          <input type="button" value="commander" onclick=""/> -->
+          </div>
+            <div class="lifeCounter">
+               <input type="button" class="minus" value=" - " onclick = "loseLife(4)" />
+
+                 <p id="lifeP4">&nbsp;P4 &nbsp;</p>
+
+                 <input type="button" class="plus" value=" + " onclick = "gainLife(4)" />
+               </div>
+             </div>
+           </div>
+
+
+
+<div id="counters5Thru6">
+        <!-- Player 5's Life Counter  -->
+        <div id="player5Counter">
+          <div class="toggle">
+          <button type="button" class="settings" onclick= "displaySettings(4)"><i class="fas fa-cog" ></i> </button>
+          <div class="colorToggle">
+            <input type="button" style= "background: #FFEBD6;" class="white" value="&nbsp;" onclick = "playerColor(5, plains)" />
+            <input type="button" style="background: #22577A;" class="blue" value="&nbsp;" onclick = "playerColor(5, island)" />
+            <input type="button" style="background: #281528;" class="black" value="&nbsp;" onclick = "playerColor(5, swamp)" />
+            <input type="button" style="background: #861D16;" class="red" value="&nbsp;" onclick = "playerColor(5, mountain)" />
+            <input type="button" style="background: #285336;" class="green" value="&nbsp;" onclick = "playerColor(5, forest)" />
+        </div>
+          <!--  <input type="button" value="infect" onclick=""/>
+          <input type="button" value="commander" onclick=""/> -->
+          </div>
+            <div class="lifeCounter">
+            <input type="button" class="minus" value=" - " onclick = "loseLife(5)" />
+
+            <p id="lifeP5">&nbsp;P5 &nbsp;</p>
+
+            <input type="button" class="plus" value=" + " onclick = "gainLife(5)" />
+              </div>
+            </div>
+
+
+
+        <!-- Player 6's Life Counter  -->
+        <div id="player6Counter">
+
+          <div class="toggle">
+          <button type="button" class="settings" onclick= "displaySettings(5)"><i class="fas fa-cog" ></i> </button>
+          <div class="colorToggle">
+            <input type="button" style= "background: #FFEBD6;" class="white" value="&nbsp;" onclick = "playerColor(6, plains)" />
+            <input type="button" style="background: #22577A;" class="blue" value="&nbsp;" onclick = "playerColor(6, island)" />
+            <input type="button" style="background: #281528;" class="black" value="&nbsp;" onclick = "playerColor(6, swamp)" />
+            <input type="button" style="background: #861D16;" class="red" value="&nbsp;" onclick = "playerColor(6, mountain)" />
+            <input type="button" style="background: #285336;" class="green" value="&nbsp;" onclick = "playerColor(6, forest)" />
+        </div>
+          <!--  <input type="button" value="infect" onclick=""/>
+          <input type="button" value="commander" onclick=""/> -->
+          </div>
+
+            <div class="lifeCounter">
+            <input type="button" class="minus" value=" - " onclick = "loseLife(6)" />
+
+            <p id="lifeP6">&nbsp;P6 &nbsp;</p>
+
+            <input type="button" class="plus" value=" + " onclick = "gainLife(6)" />
+                    </div>
+                        </div>
+                           </div>
+                </section>
+
+
+    </main>
+    <h4 id="version">Version 1.0.0</h4>
+   </body>
